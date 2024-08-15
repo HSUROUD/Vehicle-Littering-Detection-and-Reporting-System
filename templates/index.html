@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<style>
+    /* body {
+      width: 100%;
+      height: 100%;
+    } */
+    .container {
+      /* position: relative;
+      width: 100px;
+      margin-left: auto;
+      margin-right: auto; */
+      text-align: center;
+    }
+    /* .imageWrapper {
+      position: relative;
+      width: 100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .imageSize {
+      position: relative;
+      max-width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    } */
+    </style>
+    <title>yolov7 object detection</title>
+  </head>
+  <body >
+   
+  <div class="container">
+   <div class="box">
+    <form class="form-signin" method=post enctype=multipart/form-data name="form1">
+        <!-- <img class="mb-4" src="/static/pytorch.png" alt="" width="72">
+        <h1 class="h3 mb-3 font-weight-normal">Upload any image or video</h1> -->
+     <input type="file" name="file" class="form-control-file" id="inputfile" >
+    <div class="form-group">
+      <label for="shooting-time">影片拍攝時間：</label>
+      <input type="text" id="shooting-time" name="shooting-time" class="form-control" placeholder="yyyymmdd">
+    </div>
+    <div class="form-group">
+      <label for="shooting-location">影片拍攝地點：</label>
+      <input type="text" id="shooting-location" name="shooting-location" class="form-control" placeholder="輸入拍攝地址">
+    </div>
+
+        <br/>
+		    
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
+  <p class="mt-5 mb-3 text-muted">Built using Pytorch & Flask</p>
+    </form>
+</div>
+   <br>  
+		
+
+		 
+	
+   <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+   <script src="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<!-- detected video display using opencv-->
+<!--img id="my-video-image" src="{{ url_for('video_feed') }}" style="height:640; width:640px"/-->
+
+
+<!-- detected image display -->
+<!--img id="my-image" style="display: none;" src="{{ url_for('video_feed') }}" style="height:640; width:640px"/-->
+<!-- <div class="csv-wrapper">
+  <h1>CSV Data</h1>
+  <div>
+       在这里显示 CSV 文件的内容
+      {{ csv_data | safe }}
+  </div>
+</div>
+<div class="box">
+</div>
+</div> 
+<div class="imageWrapper">
+<h1>Image Gallery</h1>
+<p>Total Images: {{ image_count }}</p>
+<div class="image-gallery">
+  <div class="imageSize">
+    {% for image_filename in image_filenames %}
+        <img id="{{ image_filename }}" src="{{ url_for('static', filename=image_path + '/' + image_filename) }}" style="height:640; width:640px"/>
+    {% endfor %}
+  </div>
+</div>
+</div> -->
+<div class="row justify-content-center">
+  <div class="col-md-6">
+      <div class="csv-wrapper">
+          <h1>CSV Data</h1>
+          <div>
+              <!-- 在这里显示 CSV 文件的内容 -->
+              {{ csv_data | safe }}
+          </div>
+      </div>
+  </div>
+</div>
+<br>
+<div class="row justify-content-center">
+  <div class="col-md-6">
+      <div class="imageWrapper">
+          <h1>Image Gallery</h1>
+          <p>Total Images: {{ image_count }}</p>
+          <div class="image-gallery">
+              <div class="imageSize">
+                  {% for image_filename in image_filenames %}
+                      <img id="{{ image_filename }}" src="{{ url_for('static', filename=image_path + '/' + image_filename) }}" style="height:640; width:640px"/>
+                  {% endfor %}
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+
+
+ <div class="box">
+  </div>
+ </div>
+  </body>
+</html>

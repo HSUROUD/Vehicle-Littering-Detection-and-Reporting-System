@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<style>
+.container {
+  text-align: center;
+}
+
+.box {
+  display: inline-block;
+  width: 30%;
+  
+  background-color: white;
+  margin: 10px;
+}
+</style>
+	<style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <title>yolov7 object detection</title>
+  </head>
+  <body >
+  
+
+<h1>Image Gallery</h1>
+<p>Total Images: {{ image_count }}</p>
+<div class="image-gallery">
+    {% for image_filename in image_filenames %}
+        <img id="{{ image_filename }}" src="{{ url_for('frame_display') }}">
+    {% endfor %}
+
+
+ <div class="box">
+  </div>
+ </div>
+  </body>
+</html>
